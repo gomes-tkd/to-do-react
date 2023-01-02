@@ -1,0 +1,12 @@
+.listForm {
+    display: flex;
+    width: 25rem;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.inputAdd,
+.btnAdd {
+    padding: 5px 25px;
+}

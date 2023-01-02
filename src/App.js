@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from "react";
+import "./App.css";
+import ListForm from "./components/List/ListForm";
+import ListTask from "./components/ListTask/ListTask";
 
 function App() {
+    const [list, setList] = useState([]);
+    const [totalTask, setTotalTask] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className={"alingMain"}>
+        <h1>TO-DO List</h1>
+        <p className={"totalTask"}>Total de atividades: {totalTask}</p>
+        <section className={"container"}>
+            <ListForm setList={setList} list={list} setTotalTask={setTotalTask} />
+            <p>Tarefas registradas:</p>
+            <ListTask list={list} setList={setList} setTotalTask={setTotalTask}/>
+        </section>
+
+    </main>
   );
 }
 
